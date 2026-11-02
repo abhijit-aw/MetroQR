@@ -1,0 +1,18 @@
+.pv-hero { position: relative; overflow: hidden; border-radius: 20px; padding: 28px 32px; margin: 12px 0 20px; color: #fff;
+  background: radial-gradient(circle at 88% 30%, rgba(0, 190, 180, .4), transparent 45%), linear-gradient(120deg, #0a2345, #135aa8 65%, #0a8f95); }
+.pv-hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .3;
+  background-image: radial-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px); background-size: 22px 22px; }
+.pv-hero > * { position: relative; }
+.pv-hero h1 { margin: 0 0 4px; font-size: 32px; color: #fff; }
+.pv-hero p { margin: 0 0 12px; color: #d6e8ff; }
+.pv-hero span { display: inline-block; background: rgba(255, 255, 255, .18); border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 700; }
+
+.pv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.pv-card { transition: transform .15s, box-shadow .15s; }
+.pv-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(15, 40, 90, .14); }
+.pv-card h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font-size: 18px; }
+.pv-card h2 span { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-size: 18px; background: #eaf3ff; }
+.pv-card ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+
+.pv-note { margin-top: 18px; padding: 14px 18px; border-radius: 14px; background: #fff6e0; border: 1px solid #f0d58a; color: #3a2a00; }
+.pv-note a { color: inherit; text-decoration: underline; }

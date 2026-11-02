@@ -1,0 +1,235 @@
+/* Pune places: side-scrolling carousel, place cards, gallery */
+.sec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.see-all {
+  font-weight: 800;
+  color: var(--blue, #1565c0);
+  text-decoration: none;
+}
+.see-all:hover {
+  text-decoration: underline;
+}
+
+.pc {
+  position: relative;
+}
+.pc-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px 4px 18px;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.pc-track > li {
+  flex: 0 0 270px;
+  scroll-snap-align: start;
+}
+.pc-btn {
+  position: absolute;
+  top: calc(50% - 50px);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line, #dce5ee);
+  background: var(--card, #fff);
+  color: var(--ink, #0f1b2d);
+  box-shadow: 0 6px 18px rgba(15, 27, 45, 0.25);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pc-btn.prev {
+  left: -12px;
+}
+.pc-btn.next {
+  right: -12px;
+}
+.pc-btn:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+  .pc-btn {
+    display: none;
+  }
+  .pc-track > li {
+    flex-basis: 78%;
+  }
+}
+
+.place-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card, #fff);
+  border: 1px solid var(--line, #dce5ee);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink, #0f1b2d);
+  box-shadow: 0 10px 30px rgba(21, 101, 192, 0.1);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.place-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(21, 101, 192, 0.2);
+}
+.place-img {
+  position: relative;
+  height: 170px;
+  background: var(--line, #dce5ee);
+}
+.place-img img,
+.place-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.place-art {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  color: #fff;
+  font-weight: 800;
+  overflow: hidden;
+}
+.place-art svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.place-art span {
+  position: relative;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+.sample-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 27, 45, 0.75);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+.place-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px 16px;
+}
+.place-info strong {
+  font-size: 17px;
+  line-height: 1.25;
+}
+.place-chip {
+  align-self: flex-start;
+  background: #eaf3fb;
+  color: #0d47a1;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+:root[data-theme="dark"] .place-chip {
+  background: #1b2a40;
+  color: #bfd6f5;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.place-hero {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.3fr) 1fr;
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .place-hero {
+    grid-template-columns: 1fr;
+  }
+}
+.gallery-main {
+  position: relative;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--line, #dce5ee);
+}
+.gallery-main img,
+.gallery-main .place-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.gallery-thumbs button {
+  padding: 0;
+  width: 84px;
+  height: 62px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background: none;
+  cursor: pointer;
+}
+.gallery-thumbs button[aria-current="true"] {
+  border-color: #1565c0;
+}
+.gallery-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+.fact {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--card, #fff);
+  border: 1px solid var(--line, #dce5ee);
+}
+.fact .lbl {
+  display: block;
+  margin-bottom: 4px;
+}
+.fact strong {
+  display: block;
+}
+.fact a {
+  color: var(--blue, #1565c0);
+  font-weight: 800;
+}

@@ -1,0 +1,23 @@
+/* Station cards with a photo on top (design A).
+   Selectors are extra-specific on purpose, so they win over the .card / .station styles in station.css and theme.css. */
+
+.grid .card.station.st-card {
+  display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start;
+  gap: 0; padding: 0; overflow: hidden; text-align: left;
+}
+
+.st-photo { display: block; width: 100%; margin: 0; overflow: hidden; background: linear-gradient(120deg, #6a2f9a, #10b5c2); }
+.st-photo .stn-img {
+  display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; min-height: 0;
+  margin: 0; padding: 0; border: 0; border-radius: 0; object-fit: cover;
+  transition: transform .35s ease;
+}
+.st-card:hover .st-photo .stn-img { transform: scale(1.07); }
+
+.st-body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 20px 20px; }
+.st-body strong { font-size: 20px; line-height: 1.25; }
+
+@media (prefers-reduced-motion: reduce) {
+  .st-photo .stn-img { transition: none; }
+  .st-card:hover .st-photo .stn-img { transform: none; }
+}

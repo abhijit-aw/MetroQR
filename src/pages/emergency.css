@@ -1,0 +1,16 @@
+/* Emergency page */
+.em-hero { background: linear-gradient(120deg, #B3261E, #D9452F); color: #fff; border-radius: 24px; padding: 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+.em-hero h1 { margin: 0 0 6px; font-size: 34px; } .em-hero p { margin: 0; opacity: .95; max-width: 520px; }
+.em-call { display: inline-flex; align-items: center; justify-content: center; min-height: 64px; padding: 0 36px; border-radius: 18px; background: #fff; color: #B3261E; font-size: 24px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+.em-call:hover { background: #FFF1EF; }
+.em-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.em-tile { display: flex; flex-direction: column; gap: 2px; padding: 18px 20px; border-radius: 18px; background: #fff; border: 1px solid var(--line); text-decoration: none; box-shadow: 0 10px 30px rgba(21,101,192,.08); transition: transform .15s; }
+.em-tile:hover { transform: translateY(-3px); }
+.em-num { font-size: 32px; font-weight: 800; color: #B3261E; line-height: 1.1; } .em-name { font-weight: 800; } .em-sub { font-size: 13px; color: var(--muted); }
+.em-list { margin: 0; padding: 0; list-style: none; }
+.em-list li { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; padding: 12px 0; border-bottom: 1px solid #E1E6EB; } .em-list li:last-child { border-bottom: 0; }
+.em-list a { color: var(--blue); font-weight: 800; text-decoration: none; } .em-list a:hover { text-decoration: underline; }
+.em-steps details { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 4px 18px; margin-bottom: 10px; }
+.em-steps ol { margin: 0 0 14px; padding-left: 20px; color: #22303F; } .em-steps li { margin: 4px 0; }
+.em-note { margin-top: 20px; padding: 16px 20px; border-radius: 16px; background: #FFF7E8; border: 1px solid #F3D9A6; }
+.em-warn { padding: 16px 20px; border-radius: 16px; background: #FDECEA; border: 1px solid #F0C4C0; color: #8C1D18; font-weight: 600; }

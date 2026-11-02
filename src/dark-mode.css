@@ -1,0 +1,89 @@
+/* Dark mode for the whole site. Active when <html data-theme="dark"> (set by hooks/useTheme.js).
+   Light mode needs nothing here: it is the normal styling of the site. */
+
+html[data-theme='dark'] {
+  --d-bg: #0b1220;
+  --d-surface: #131d31;
+  --d-surface-2: #1a2740;
+  --d-text: #e8eef6;
+  --d-muted: #9db0c6;
+  --d-line: #26364f;
+  --d-link: #7db7ff;
+  color-scheme: dark;
+  background: var(--d-bg);
+}
+
+/* page */
+html[data-theme='dark'] body,
+html[data-theme='dark'] #root,
+html[data-theme='dark'] main { color: var(--d-text); }
+
+html[data-theme='dark'] h1,
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3,
+html[data-theme='dark'] h4,
+html[data-theme='dark'] strong,
+html[data-theme='dark'] dt,
+html[data-theme='dark'] label { color: var(--d-text); }
+html[data-theme='dark'] p,
+html[data-theme='dark'] li,
+html[data-theme='dark'] dd,
+html[data-theme='dark'] td,
+html[data-theme='dark'] th { color: var(--d-text); }
+html[data-theme='dark'] .muted,
+html[data-theme='dark'] .small,
+html[data-theme='dark'] .lbl { color: var(--d-muted); }
+html[data-theme='dark'] a:not(.btn):not(.mq-pill):not(.ps-card):not(.card):not(.tile) { color: var(--d-link); }
+html[data-theme='dark'] hr { border-color: var(--d-line); }
+
+/* cards and tiles */
+html[data-theme='dark'] .card,
+html[data-theme='dark'] .tile,
+html[data-theme='dark'] .panel,
+html[data-theme='dark'] .box {
+  background: var(--d-surface);
+  border-color: var(--d-line);
+  color: var(--d-text);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+}
+html[data-theme='dark'] .tile .tile-label { color: var(--d-text); }
+
+/* forms */
+html[data-theme='dark'] .fld,
+html[data-theme='dark'] input,
+html[data-theme='dark'] select,
+html[data-theme='dark'] textarea {
+  background: var(--d-surface-2);
+  border-color: var(--d-line);
+  color: var(--d-text);
+}
+html[data-theme='dark'] input::placeholder,
+html[data-theme='dark'] textarea::placeholder { color: var(--d-muted); }
+html[data-theme='dark'] select option { background: #fff; color: #0f1b2d; }
+
+/* tables */
+html[data-theme='dark'] table { border-color: var(--d-line); }
+html[data-theme='dark'] th { background: var(--d-surface-2); }
+html[data-theme='dark'] td,
+html[data-theme='dark'] th { border-color: var(--d-line); }
+
+/* footer */
+html[data-theme='dark'] .footer { background: #0a101c; border-color: var(--d-line); color: var(--d-text); }
+html[data-theme='dark'] .footer a { color: var(--d-muted); }
+html[data-theme='dark'] .footer a:hover { color: var(--d-text); }
+
+/* places (Home carousel + Places page) */
+html[data-theme='dark'] .ps-card { background: var(--d-surface); border-color: var(--d-line); color: var(--d-text); box-shadow: 0 8px 22px rgba(0, 0, 0, .4); }
+html[data-theme='dark'] .ps-body h3 { color: var(--d-text); }
+html[data-theme='dark'] .ps-body p { color: var(--d-muted); }
+html[data-theme='dark'] .ps-chip { background: rgba(15, 23, 34, .88); color: #bcd7ff; }
+html[data-theme='dark'] .ps-filter { background: var(--d-surface); border-color: var(--d-line); color: var(--d-text); }
+html[data-theme='dark'] .ps-filter.on { color: #fff; border-color: transparent; background: linear-gradient(90deg, #1565c0, #0a9aa8); }
+html[data-theme='dark'] .ps-arrow { background: var(--d-surface-2); color: #bcd7ff; }
+
+/* "see all" style links */
+html[data-theme='dark'] .see-all { color: var(--d-link); }
+
+/* images: slightly softer so they do not glare on a dark page */
+html[data-theme='dark'] img { filter: brightness(.92); }
+html[data-theme='dark'] .mq-logo-svg { filter: none; }

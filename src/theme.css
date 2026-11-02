@@ -1,0 +1,66 @@
+/* Light / dark theme.
+   Light colours stay in index.css. Everything below only applies when <html data-theme="dark">.
+   Rules start with :root[data-theme='dark'] so they win no matter which CSS file loads first. */
+:root { --card: #fff; color-scheme: light; }
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0B1220; --card: #121C2E; --ink: #E6EDF7; --muted: #A3B3C8; --line: #27374F; --blue: #7DB2FF;
+  --green-bg: #0F3D32; --green: #7FE3C3;
+}
+body { transition: background-color .2s, color .2s; }
+@media (prefers-reduced-motion: reduce) { body { transition: none; } }
+
+/* surfaces */
+:root[data-theme='dark'] .card, :root[data-theme='dark'] .stn-card, :root[data-theme='dark'] .em-tile,
+:root[data-theme='dark'] .em-steps details, :root[data-theme='dark'] .facility, :root[data-theme='dark'] .timeline li::before,
+:root[data-theme='dark'] .ring span, :root[data-theme='dark'] .pill, :root[data-theme='dark'] .btn.outline,
+:root[data-theme='dark'] .stn-actions button { background: var(--card); color: var(--ink); }
+:root[data-theme='dark'] .card, :root[data-theme='dark'] .stn-card { box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+:root[data-theme='dark'] .balance, :root[data-theme='dark'] .trip { background: #0E1626; }
+:root[data-theme='dark'] .btn.outline { border-color: #3A4E6B; }
+:root[data-theme='dark'] .pill.on { background: var(--ink); color: #0B1220; border-color: var(--ink); }
+:root[data-theme='dark'] .pill.glass { background: rgba(255,255,255,.18); color: #fff; }
+:root[data-theme='dark'] .footer { background: #070D18; }
+:root[data-theme='dark'] .logo { color: #1565C0; }          /* white circle in the header stays white */
+:root[data-theme='dark'] .steps li.on::before { color: #0B1220; }
+
+/* forms */
+:root[data-theme='dark'] .fld { background: #0E1626; color: var(--ink); border-color: #5B7090; }
+:root[data-theme='dark'] .fld::placeholder { color: #7F91A8; }
+:root[data-theme='dark'] select.fld option { background: var(--card); color: var(--ink); }
+:root[data-theme='dark'] .line.total { border-top-color: #3A4E6B; }
+
+/* text colours that were fixed for a white page */
+:root[data-theme='dark'] .error, :root[data-theme='dark'] .em-num, :root[data-theme='dark'] .row-link.logout { color: #FF8A80; }
+:root[data-theme='dark'] .row-link, :root[data-theme='dark'] .strip-list a { color: var(--ink); }
+:root[data-theme='dark'] .row-link:hover { background: #17243A; }
+:root[data-theme='dark'] details p, :root[data-theme='dark'] .em-steps ol { color: #C9D6E6; }
+:root[data-theme='dark'] .link-btn { color: #FFB86B; }
+
+/* badges, chips and notices */
+:root[data-theme='dark'] .badge.expired { background: #3A2412; color: #F4B27A; }
+:root[data-theme='dark'] .badge.used { background: #2A3547; color: #B9C6D8; }
+:root[data-theme='dark'] .bar { background: #27374F; }
+:root[data-theme='dark'] .stn-feats:not(.hl) li { background: #1B2A40; color: var(--ink); }
+:root[data-theme='dark'] .soft-badge { background: #1B2A40; color: #BFD6F5; }
+:root[data-theme='dark'] .notice, :root[data-theme='dark'] .stn-note, :root[data-theme='dark'] .em-note { background: #2A2210; border-color: #5A4A1E; color: #F6E7C1; }
+:root[data-theme='dark'] .demo-tag { background: #3A2C0C; color: #F6C77A; }
+:root[data-theme='dark'] .em-warn { background: #3A1512; border-color: #6B2A25; color: #FFB4AB; }
+:root[data-theme='dark'] .photo { background: #1B2A40; }
+
+/* dividers that were hard-coded light grey */
+:root[data-theme='dark'] .row-link, :root[data-theme='dark'] details, :root[data-theme='dark'] .reach-row,
+:root[data-theme='dark'] .em-list li { border-bottom-color: var(--line); }
+
+/* map and icons */
+:root[data-theme='dark'] .map-inner text { fill: var(--ink); }
+:root[data-theme='dark'] .map-inner .dot[fill='#fff'] { fill: var(--card); }
+:root[data-theme='dark'] .map-inner .dot[stroke='#0F1B2D'] { stroke: #E6EDF7; }
+:root[data-theme='dark'] .map-inner line { stroke: #E6EDF7; }
+:root[data-theme='dark'] .card svg[stroke='#0B5A4B'] { stroke: #7FE3C3; }
+/* QR codes keep a white background in both themes so they scan. */
+
+/* the theme button in the header */
+.theme-btn { display: inline-flex; align-items: center; gap: 6px; }
+.theme-btn svg { flex: none; }

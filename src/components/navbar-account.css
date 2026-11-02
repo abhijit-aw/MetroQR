@@ -1,0 +1,12 @@
+/* One round account icon in the header (replaces the name link + Log out button) */
+.acct-btn { width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: #fff; color: #1565C0; font-weight: 800; font-size: 14px; text-decoration: none; border: 2px solid rgba(255,255,255,.55); box-shadow: 0 2px 8px rgba(0,0,0,.25); transition: transform .12s; }
+.acct-btn:hover { transform: scale(1.08); }
+.acct-btn.active, .acct-btn[aria-current='page'] { border-color: #F6B042; box-shadow: 0 0 0 3px rgba(246,176,66,.45); }
+.util .acct-btn { color: #1565C0; }
+.logout-btn { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 52px; margin-top: 16px; border-radius: 14px; border: 2px solid #B3261E; background: transparent; color: #B3261E; font: 800 16px 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
+.logout-btn:hover { background: #FDECEA; }
+:root[data-theme='dark'] .logout-btn { border-color: #FF8A80; color: #FF8A80; }
+:root[data-theme='dark'] .logout-btn:hover { background: #3A1512; }
+/* location chip in the top strip */
+.loc-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; color: #D6E6FA; font-weight: 600; text-decoration: none; }
+.loc-chip:hover { color: #fff; }

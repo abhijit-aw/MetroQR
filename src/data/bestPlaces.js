@@ -1,0 +1,112 @@
+// Photos live in public/images/. Add a new place here and it shows up everywhere.
+// "slug" must match the slug in your places data file, so the card opens the right detail page (/place/<slug>).
+const BASE = import.meta.env.BASE_URL;
+
+export const BEST_PLACES = [
+  {
+    slug: 'shaniwar-wada',
+    name: 'Shaniwar Wada',
+    type: 'History',
+    area: 'Shaniwar Peth, old Pune',
+    img: `${BASE}images/shaniwar-wada-pune.jpeg`,
+    alt: 'Stone gate and bastions of Shaniwar Wada',
+  },
+  {
+    slug: 'aga-khan-palace',
+    name: 'Aga Khan Palace',
+    type: 'History',
+    area: 'Kalyani Nagar, Nagar Road',
+    img: `${BASE}images/Aga khan place.jpeg`,
+    alt: 'Aga Khan Palace lit up at dusk',
+  },
+  {
+    slug: 'dagdusheth-halwai-ganpati-temple',
+    name: 'Dagdusheth Halwai Ganpati Temple',
+    type: 'Temple',
+    area: 'Budhwar Peth',
+    img: `${BASE}images/dagduseth img.jpeg`,
+    alt: 'Dagdusheth Ganpati temple',
+  },
+  {
+    slug: 'raja-dinkar-kelkar-museum',
+    name: 'Raja Dinkar Kelkar Museum',
+    type: 'Museum',
+    area: 'Shukrawar Peth, off Bajirao Road',
+    img: `${BASE}images/museum.jpeg`,
+    alt: 'Museum hall with old clay pots and a carriage',
+  },
+  {
+    slug: 'pataleshwar-cave-temple',
+    name: 'Pataleshwar Cave Temple',
+    type: 'Temple',
+    area: 'Jangli Maharaj Road, Shivajinagar',
+    img: `${BASE}images/pataleshwar cave temple.jpeg`,
+    alt: 'Rock-cut pillars inside Pataleshwar cave temple',
+  },
+  {
+    slug: 'saras-baug',
+    name: 'Saras Baug',
+    type: 'Garden',
+    area: 'Sadashiv Peth',
+    img: `${BASE}images/Saras baug.jpeg`,
+    alt: 'Evening view of the Saras Baug pond',
+  },
+  {
+    slug: 'parvati-hill',
+    name: 'Parvati Hill',
+    type: 'Temple',
+    area: 'Parvati Paytha',
+    img: `${BASE}images/Paravti hill.jpeg`,
+    alt: 'Colourful temple on Parvati Hill',
+  },
+  {
+    slug: 'sinhagad-fort',
+    name: 'Sinhagad Fort',
+    type: 'Fort',
+    area: 'About 35 km southwest of Pune',
+    img: `${BASE}images/Sinhagad fort.jpeg`,
+    alt: 'Fort gate of Sinhagad under a cloudy sky',
+  },
+  {
+    slug: 'khadakwasla-dam',
+    name: 'Khadakwasla Dam',
+    type: 'Lake',
+    area: 'South-west edge of Pune',
+    img: `${BASE}images/Khadakwasala dam.jpeg`, 
+    alt: 'Water rushing over Khadakwasla dam',
+  },
+  {
+    slug: 'okayama-friendship-garden',
+    name: 'Okayama Friendship Garden',
+    type: 'Garden',
+    area: 'Sinhagad Road',
+    img: `${BASE}images/garden.jpeg`,
+    alt: 'Colourful flower garden with a green lawn',
+  },
+  {
+    slug: 'bund-garden',
+    name: 'Bund Garden',
+    type: 'Garden',
+    area: 'Along the Mula-Mutha river',
+    img: `${BASE}images/Bund garden.jpeg`,
+    alt: 'Entrance gate of Bund Garden walking plaza',
+  },
+  {
+    slug: 'pashan-lake',
+    name: 'Pashan Lake',
+    type: 'Lake',
+    area: 'Pashan, west Pune',
+    img: `${BASE}images/lake.jpg`,
+    alt: 'Sunrise over a calm lake with ducks',
+  },
+  {
+    slug: 'shri-swaminarayan-temple',
+    name: 'Shri Swaminarayan Temple',
+    type: 'Temple',
+    area: 'Narhe-Ambegaon, Pune',
+    img: `${BASE}images/temple.jpeg`,
+    alt: 'Shri Swaminarayan Temple in Pune',
+  },
+];
+
+export const PLACE_TYPES = ['All', ...new Set(BEST_PLACES.map((p) => p.type))];

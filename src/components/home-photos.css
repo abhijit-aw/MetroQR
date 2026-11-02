@@ -1,0 +1,17 @@
+/* Photos inside the feature cards and Quick actions tiles */
+.photo { background: linear-gradient(120deg, #1565c0, #00a99d); overflow: hidden; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.card.photo-card { padding: 0; overflow: hidden; }
+.photo-card .photo { height: 170px; }
+.photo-card .photo-body { padding: 22px 36px 30px; }
+.photo-card .photo-body p { margin: 6px 0 0; }
+
+.card.tile.photo-tile { padding: 0; min-height: 0; height: auto; display: flex; flex-direction: column; overflow: hidden; }
+.photo-tile .photo { height: 120px; }
+.photo-tile .tile-label { padding: 22px 16px; text-align: center; }
+.photo-tile:hover .photo img { transform: scale(1.05); }
+.photo-tile .photo img { transition: transform .25s; }
+
+@media (prefers-reduced-motion: reduce) { .photo-tile .photo img { transition: none; } .photo-tile:hover .photo img { transform: none; } }
+@media (max-width: 700px) { .photo-card .photo { height: 140px; } .photo-card .photo-body { padding: 18px 22px 24px; } }

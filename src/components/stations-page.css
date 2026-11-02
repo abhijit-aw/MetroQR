@@ -1,0 +1,53 @@
+/* Stations page – header, filters, line sections, station cards */
+.sp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.sp-head h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.sp-head p { margin: 0; max-width: 460px; font-size: .85rem; }
+.sp-stats { display: flex; gap: 8px; }
+.sp-stats > div { background: var(--card, #fff); border: 1px solid #e6e9f2; border-radius: 14px; padding: 8px 14px; text-align: center; min-width: 74px; }
+.sp-stats strong { display: block; font-size: 1.2rem; }
+.sp-stats span { font-size: .68rem; color: #6b7280; }
+
+.sp-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 22px; }
+.sp-search { flex: 1 1 260px; max-width: 360px; padding: 10px 16px; border-radius: 999px; border: 1px solid #e0e4ee; background: var(--card, #fff); font: inherit; font-size: .9rem; }
+.sp-pill { border: 1px solid #e0e4ee; background: var(--card, #fff); border-radius: 999px; padding: 8px 14px; font: inherit; font-size: .8rem; cursor: pointer; }
+.sp-pill small { margin-left: 4px; font-size: .68rem; color: #6b7280; }
+.sp-pill.on { background: #0f172a; border-color: #0f172a; color: #fff; }
+.sp-pill.on small { color: #cbd5e1; }
+
+.sp-sec { margin-bottom: 28px; }
+.sp-sec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.sp-chip { background: var(--c); color: #fff; font-weight: 700; font-size: .78rem; padding: 5px 14px; border-radius: 999px; white-space: nowrap; }
+.sp-route { font-size: .8rem; color: #6b7280; white-space: nowrap; }
+.sp-sec-head hr { flex: 1; border: 0; height: 1px; background: color-mix(in srgb, var(--c) 35%, transparent); margin: 0; }
+.sp-more { background: none; border: 0; color: #1565C0; font: inherit; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+
+.sp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+
+.sc { display: block; background: var(--card, #fff); border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 2px 10px rgba(15, 23, 42, .08); transition: transform .15s, box-shadow .15s; }
+.sc:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(15, 23, 42, .14); }
+.sc-banner { position: relative; height: 112px; display: grid; place-items: center; background: linear-gradient(160deg, color-mix(in srgb, var(--c) 85%, #fff 0%), color-mix(in srgb, var(--c) 60%, #000)); }
+.sc-banner::before, .sc-banner::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: rgba(255, 255, 255, .18); }
+.sc-banner::before { top: 46px; }
+.sc-banner::after { bottom: 20px; }
+.sc-tag { position: absolute; top: 9px; left: 9px; display: inline-flex; align-items: center; gap: 5px; background: #fff; color: #111; font-size: .62rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
+.sc-tag i { width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+.sc-num { position: absolute; top: 9px; right: 9px; background: rgba(0, 0, 0, .28); color: #fff; font-size: .62rem; font-weight: 700; padding: 3px 7px; border-radius: 999px; }
+.sc-train { width: 108px; margin-top: 22px; position: relative; }
+.sc-win { fill: var(--c); }
+
+.sc-body { padding: 12px 14px 14px; }
+.sc-name { display: block; font-size: .95rem; min-height: 2.4em; line-height: 1.2; }
+.sc-track { position: relative; height: 4px; border-radius: 4px; background: #e5e7eb; margin: 10px 0 8px; }
+.sc-track b { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--c); }
+.sc-track i { position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2px solid var(--c); transform: translate(-50%, -50%); }
+.sc-meta { display: flex; justify-content: space-between; gap: 6px; font-size: .62rem; color: #6b7280; font-weight: 600; }
+.sc-meta span:last-child { text-align: right; }
+
+@media (max-width: 520px) {
+  .sp-grid { grid-template-columns: repeat(2, 1fr); }
+  .sp-route { white-space: normal; }
+}
+/* Interchange card */
+.sc.ix .sc-banner { background: linear-gradient(135deg, var(--c1), var(--c2)); }
+.sc-lines { display: flex; gap: 6px; margin: 8px 0 10px; }
+.sc-lines span { color: #fff; font-size: .62rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }

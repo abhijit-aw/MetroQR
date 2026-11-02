@@ -1,0 +1,42 @@
+/* Page background (design A): soft blue-teal glow, a faint dot grid and a metro route line.
+   Drawn on body::before (fixed, behind everything), so the cards, tiles and the Navbar sit on top of it. */
+
+html {
+  --bg-base-a: #f5f9ff;
+  --bg-base-b: #e8f1fb;
+  --bg-glow-blue: rgba(21, 101, 192, .17);
+  --bg-glow-teal: rgba(0, 169, 157, .17);
+  --bg-dot: rgba(21, 101, 192, .11);
+  background: var(--bg-base-b);
+}
+html[data-theme='dark'] {
+  --bg-base-a: #0e1a2e;
+  --bg-base-b: #08101d;
+  --bg-glow-blue: rgba(33, 120, 220, .22);
+  --bg-glow-teal: rgba(0, 190, 175, .16);
+  --bg-dot: rgba(125, 183, 255, .09);
+}
+
+/* let the background show through the page wrappers (cards and the footer keep their own colours) */
+html body { background: transparent; position: relative; min-height: 100vh; }
+html #root, html main { background: transparent; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 520'%3E%3Cpath d='M40 430C140 430 190 330 300 320S470 400 560 330 700 150 920 150' fill='none' stroke='%231565c0' stroke-opacity='.28' stroke-width='5' stroke-linecap='round' stroke-dasharray='2 14'/%3E%3Cg fill='%23ffffff' fill-opacity='.45' stroke='%231565c0' stroke-opacity='.45' stroke-width='4'%3E%3Ccircle cx='40' cy='430' r='9'/%3E%3Ccircle cx='300' cy='320' r='9'/%3E%3Ccircle cx='560' cy='330' r='9'/%3E%3Ccircle cx='740' cy='192' r='9'/%3E%3C/g%3E%3C/svg%3E") right -120px bottom 6vh / 900px auto no-repeat,
+    radial-gradient(900px 520px at 6% -6%, var(--bg-glow-blue), transparent 62%),
+    radial-gradient(820px 540px at 96% 6%, var(--bg-glow-teal), transparent 62%),
+    radial-gradient(900px 620px at 50% 108%, var(--bg-glow-blue), transparent 64%),
+    radial-gradient(var(--bg-dot) 1.3px, transparent 1.6px) 0 0 / 26px 26px,
+    linear-gradient(180deg, var(--bg-base-a) 0%, var(--bg-base-b) 100%);
+}
+
+@media (max-width: 700px) {
+  body::before { background-size: 520px auto, auto, auto, auto, 22px 22px, auto; }
+}
+@media print { body::before { display: none; } }

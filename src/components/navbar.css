@@ -1,0 +1,220 @@
+.mq-header {
+  --mq-bg: #ffffff;
+  --mq-ink: #0f1b2d;
+  --mq-title: #0d3f9e;
+  --mq-muted: #4b5b70;
+  --mq-line: #e1e6ee;
+  --mq-blue: #1565c0;
+  --mq-teal: #00a99d;
+  --logo-gap: clamp(10px, 1.5vw, 22px); /* space between the round logo and the METRO QR title */
+  position: relative;
+  z-index: 50;
+  font-family: 'Liberation Sans', Arial, 'Noto Sans Devanagari', 'Nirmala UI', Mangal, Helvetica, sans-serif;
+}
+:root[data-theme='dark'] .mq-header,
+.dark .mq-header,
+[data-theme='dark'] .mq-header {
+  --mq-bg: #0f1722;
+  --mq-ink: #e8eef6;
+  --mq-title: #7db7ff;
+  --mq-muted: #93a4b8;
+  --mq-line: #243245;
+}
+ 
+.mq-wrap { width: min(1206px, calc(100% - 32px)); margin: 0 auto; }
+.mq-header { --logo: clamp(64px, 8.15vw, 120px); }
+ 
+/* ---------- white top bar ---------- */
+.mq-top { background: var(--mq-bg); }
+.mq-top-in {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: clamp(72px, 7.15vw, 105px);
+  padding-left: calc(var(--logo) + var(--logo-gap)); /* room for the overhanging logo */
+}
+.mq-logo {
+  position: absolute;
+  left: 3px;
+  top: calc(var(--logo) * .14);
+  width: var(--logo);
+  height: var(--logo);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 16px rgba(13, 71, 161, .28);
+  z-index: 3;
+}
+.mq-logo-svg { width: 100%; height: 100%; display: block; }
+ 
+.mq-brand { display: flex; flex-direction: column; text-decoration: none; margin-right: auto; }
+.mq-title {
+  font-size: clamp(22px, 3.2vw, 47px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .055em;
+  color: var(--mq-title);
+}
+.mq-tag {
+  margin-top: clamp(4px, .55vw, 8px);
+  font-size: clamp(8px, .88vw, 13px);
+  line-height: 1;
+  letter-spacing: .22em;
+  color: var(--mq-muted);
+  font-weight: 700;
+}
+ 
+.mq-actions { display: flex; align-items: center; gap: clamp(5px, .8vw, 12px); flex-wrap: nowrap; justify-content: flex-end; }
+.mq-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(4px, .68vw, 10px);
+  height: clamp(30px, 3vw, 44px);
+  padding: 0 clamp(8px, 1.15vw, 17px);
+  border: 1px solid var(--mq-line);
+  border-radius: 999px;
+  background: var(--mq-bg);
+  color: var(--mq-ink);
+  font: 700 clamp(10px, 1.02vw, 15px)/1 'Liberation Sans', Arial, 'Noto Sans Devanagari', 'Nirmala UI', Mangal, Helvetica, sans-serif;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(15, 27, 45, .06);
+}
+.mq-pill:hover { box-shadow: 0 3px 10px rgba(15, 27, 45, .14); }
+.mq-primary {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(90deg, #1565c0, #0a9aa8);
+}
+.mq-acct {
+  display: grid; place-items: center;
+  width: clamp(30px, 3vw, 44px); height: clamp(30px, 3vw, 44px); border-radius: 50%;
+  background: linear-gradient(90deg, #1565c0, #0a9aa8);
+  color: #fff; font-weight: 700; font-size: 15px; text-decoration: none;
+}
+ 
+/* ---------- blue-teal nav bar ---------- */
+.mq-nav {
+  height: clamp(44px, 4.28vw, 63px);
+  background: linear-gradient(90deg, #1565c0 0%, #0e7fb0 50%, #00a99d 100%);
+  box-shadow: 0 8px 18px rgba(21, 101, 192, .18);
+}
+.mq-nav-in { height: 100%; padding-left: calc(var(--logo) + var(--logo-gap)); box-sizing: border-box; }
+.mq-links { display: flex; align-items: stretch; gap: clamp(8px, 1.46vw, 21.5px); height: 100%; }
+.mq-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(11px, 1.22vw, 18px);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mq-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 4px;
+  height: 3px; border-radius: 3px;
+  background: #fff;
+}
+.mq-menu-btn {
+  display: none;
+  margin: 10px 0;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+ 
+.mq-header a:focus-visible,
+.mq-header button:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+ 
+/* Marathi and Hindi words are a bit longer, so the nav links get slightly smaller on wide screens */
+@media (min-width: 801px) {
+  html[lang='mr'] .mq-links, html[lang='hi'] .mq-links { gap: clamp(6px, 1.05vw, 16px); }
+  html[lang='mr'] .mq-links a, html[lang='hi'] .mq-links a { font-size: clamp(10px, 1.06vw, 16px); }
+}
+ 
+/* ---------- small screens (<= 800px): nav collapses to a Menu button ---------- */
+@media (max-width: 800px) {
+  .mq-nav { height: auto; }
+  .mq-nav-in { padding-left: 0; }
+  .mq-menu-btn {
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; height: 52px; margin: 0; padding: 0;
+    border: 0; border-radius: 0; background: transparent;
+    color: #fff; font-size: 16px; font-weight: 800; letter-spacing: .02em;
+    text-align: left; cursor: pointer;
+  }
+  /* hamburger icon (3 lines) / close icon */
+  .mq-menu-btn::before {
+    content: ''; flex: none; width: 20px; height: 14px;
+    border-top: 2.5px solid #fff; border-bottom: 2.5px solid #fff;
+    background: linear-gradient(#fff, #fff) center / 100% 2.5px no-repeat;
+  }
+  .mq-menu-btn[aria-expanded='true']::before {
+    height: 20px; border: 0;
+    background:
+      linear-gradient(45deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%),
+      linear-gradient(-45deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%);
+  }
+  .mq-links { display: none; flex-direction: column; height: auto; gap: 0; padding: 0 0 10px; border-top: 1px solid rgba(255, 255, 255, .28); }
+  .mq-links.open { display: flex; }
+  .mq-links a {
+    min-height: 48px; padding: 0 12px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+    border-left: 4px solid transparent;
+  }
+  .mq-links a.active { background: rgba(255, 255, 255, .18); border-left-color: #fff; }
+  .mq-links a.active::after { display: none; }
+}
+ 
+/* ---------- phones (<= 640px) ----------
+   Row 1: logo + METRO QR + account avatar
+   Row 2: English | Dark | Location pills */
+@media (max-width: 640px) {
+  .mq-top-in {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 14px 12px;
+    height: auto; min-height: 0;
+    padding: 14px 0;
+  }
+  .mq-logo {
+    position: static; top: auto; left: auto;
+    width: 52px; height: 52px; flex: none;
+  }
+  .mq-brand { margin: 0; padding-right: 54px; min-width: 0; }
+  .mq-title { font-size: 24px; letter-spacing: .06em; }
+  .mq-tag { display: none; }
+ 
+  .mq-actions {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex; flex-wrap: wrap; justify-content: flex-start;
+    gap: 8px;
+  }
+  .mq-pill { height: 38px; padding: 0 13px; font-size: 13px; gap: 7px; }
+  .mq-pill svg { color: var(--mq-blue); flex: none; }
+  /* location pill takes the remaining space; long text shows "..." */
+  .mq-pill:has(.mq-loc) { flex: 1 1 0; min-width: 0; }
+  .mq-loc { overflow: hidden; text-overflow: ellipsis; }
+ 
+  /* avatar sits at the top right, in row 1 */
+  .mq-acct {
+    position: absolute; top: 14px; right: 0;
+    width: 42px; height: 42px; font-size: 15px; font-weight: 800;
+  }
+}
+/* very small phones: only the pin icon */
+@media (max-width: 340px) {
+  .mq-loc { display: none; }
+}
